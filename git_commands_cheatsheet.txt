@@ -1,0 +1,40 @@
+Setting up git for the first time:
+
+find your github email at https://github.com/settings/emails and enter this stuff:
+git config --global user.email "GITHUB-EMAIL" (email that i use ends with @users.noreply.github.com)
+git config --global user.name "GITHUB-USERNAME"
+
+
+Making a branch and adding a commit:
+git clone https://github.com/username/repo.git (obviousy this should be your own fork of a project)
+cd into the folder!
+create branch: git checkout -b branch-name
+Then, make your changes to the code!
+git add .
+git commit -am "[fix] fixes a bug" (obviously this is the title of your commit)
+optionaly, type: git status
+git push origin brach-name
+
+enter your github username when prompted
+for the password use your access token, see this guide to get one: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+use this token when git prompts you for your password! The password you use on the github login page doesn't work!
+
+
+Squashing commits:
+usefull video guide - https://www.youtube.com/watch?v=viY1BbKZhSI
+
+first, set our git editor to nano to make things easier:
+export GIT_EDITOR="nano"
+export EDITOR="nano"
+echo 'export GIT_EDITOR="nano"' >> ~/.bashrc
+and restart terminal or run source ~/.bashrc
+
+
+git switch branch-name
+git rebase -i HEAD~18
+(that number should be the number of commits you've made in total)
+
+now change 'pick' to 's' for all the commits except the first one
+when you save and exit, it will open the next file- you need to remove all commit messages except the first one
+
+git push origin branch-name -f

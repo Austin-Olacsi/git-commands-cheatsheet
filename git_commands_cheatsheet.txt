@@ -16,7 +16,7 @@ optionaly, type: git status
 git push origin brach-name
 
 enter your github username when prompted
-for the password use your access token, see this guide to get one: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+for the password use your access token, generate one here: https://github.com/settings/tokens?type=beta
 use this token when git prompts you for your password! The password you use on the github login page doesn't work!
 
 
